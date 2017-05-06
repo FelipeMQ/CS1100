@@ -1,18 +1,33 @@
-def tresn(nx, i):
-    i = i + 1
-    if nx == 1:
-        return i
-    elif nx % 2 == 1:
-        return tresn(3 * nx + 1, i)
+def tresn(nx, memo):
+    if nx in memo:
+        return memo[nx]
+    elif nx & 1:
+        l = tresn((nx << 1) + nx + 1, memo)
     else:
-        return tresn(nx / 2, i)
+        l = tresn(nx >> 1, memo)
+    memo[nx]=l+1
+    return memo[nx]
 
-n, m = input().split(" ")
-n, m = int(n), int(m)
-if (n in range(1,1000000) and m in range(1,1000000)):
-    M = 0
-    for i in range(n,m+1):
-        tresn(i, 0)
-        if M < tresn(i, 0):
-            M = tresn(i, 0)
-    print(n, m, M)
+def main():
+    memo = {1: 1}
+    while True:
+        try:
+            n, m = [int(a) for a in input().split()]
+        except EOFError:
+            break
+        except ValueError:
+            break
+        if m<n:
+            min = m
+            max = n
+        else:
+            min = n
+            max = m
+        M = 0
+        for i in range(min, max + 1):
+            if M < tresn(i, memo):
+                M = tresn(i, memo)
+        print(n, m, M)
+
+if __name__ == '__main__':
+    main()

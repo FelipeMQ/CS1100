@@ -1,6 +1,9 @@
 x = 5
 print(id(x))
+
+numeros = [1,2,3,4,5]
 print(id(5))
+print(id(numeros[4]))
 
 y = [1,2,3,4]
 print(id(1))
@@ -30,5 +33,17 @@ y = ("z","y","x","a")
 print(id(z[0]))
 print(id(y[3]))
 
+lista1 = ['a','b','c']
+print(lista1)
+lista2 = lista1
+print(id(lista1),id(lista2))
+lista1.append('a')
+print(id(lista1),id(lista2))
+print(lista1,lista2)
+
 saludo = "Hola UTEC!"
 saludo[3]="A"
+
+listan = numeros[:]
+print(id(numeros))
+print(id(listan))
