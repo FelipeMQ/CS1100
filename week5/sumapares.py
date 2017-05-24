@@ -1,5 +1,3 @@
-print("demo","dos",sep="")
-
 n=int(input())
 cnt=0
 suma=0

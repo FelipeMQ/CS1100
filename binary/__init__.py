@@ -1,8 +1,9 @@
-print(133332%2)
-print(133332&1)
 
-print(9%3)
-print(12&2)
+#multiplica por 2
+print(2<<2)
+#divide entre 2
+print(16>>3)
 
-if (0):
-    print("imprime")
+#resto de dividir entre 2
+print(133333%2)
+print(133333&1)
