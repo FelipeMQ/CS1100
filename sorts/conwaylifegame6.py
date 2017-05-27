@@ -11,7 +11,7 @@ def juegovida(mat,t):
 
     for cnt in range(len(mat)+2):
         container.append([])
-        for ind in range(len(mat) + 2):
+        for ind in range(len(mat[cnt-2])+2):
             container[cnt].append(0)
 
     for cnt in range(1, len(mat)+1):
@@ -24,6 +24,7 @@ def juegovida(mat,t):
         cnts.append(0)
         for x in range(1, len(container)-1):
             for y in range(1, len(container[x])-1):
+                #print(x,y,vecinos(container,x,y))
                 if vecinos(container,x,y) == 3:
                     if container[x][y]==0: #validar que sea nacimiento
                         cnts[z] += 1
@@ -54,5 +55,6 @@ else:
     #proceso
     rmat,cnts = juegovida(mat,t)
     #resultados
+    print(rmat)
     print("\n".join([" ".join([str(x) for idx,x in enumerate(row) if idx not in [0,len(row)-1]]) for ind,row in enumerate(rmat) if ind not in [0, len(rmat)-1]]))
     print("\n".join([str(cnt) for cnt in bubblesort(cnts)]))
