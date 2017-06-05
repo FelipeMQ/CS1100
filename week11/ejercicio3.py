@@ -27,7 +27,6 @@ while True:
     if nombre_completo not in registro:
         notas = [int(x) for x in input("Notas:").split(",")]
         agregar(registro,nombre_completo,round(sum(notas)/len(notas),2))
-        print(registro)
     else:
         print("Las notas del alumno ya se han registrado!")
 print(sorted(registro, key=registro.get))
