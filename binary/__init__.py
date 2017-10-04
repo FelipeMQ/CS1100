@@ -1,3 +1,8 @@
+def find(self, finder):
+    return self.type_line.find(finder)
+
+print(["Hola"].type_line)
+
 
 #multiplica por 2
 print(2<<2)

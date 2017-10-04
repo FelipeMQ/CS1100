@@ -14,7 +14,7 @@ engine.connect("started-utterance", onStart)
 engine.connect("started-word", onWord)
 engine.connect("finished-utterance", onEnd)
 
-engine.say('Primera pronunciación.')
-engine.say('Segunda pronunciación.')
+engine.say('Primera pronunciacion.')
+engine.say('Segunda pronunciacion.')
 engine.runAndWait()
 

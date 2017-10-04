@@ -55,6 +55,5 @@ else:
     #proceso
     rmat,cnts = juegovida(mat,t)
     #resultados
-    print(rmat)
     print("\n".join([" ".join([str(x) for idx,x in enumerate(row) if idx not in [0,len(row)-1]]) for ind,row in enumerate(rmat) if ind not in [0, len(rmat)-1]]))
     print("\n".join([str(cnt) for cnt in bubblesort(cnts)]))
